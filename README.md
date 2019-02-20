@@ -1,6 +1,6 @@
 # codeSamples
 
-A collection of code samples authored by Conor Parlo Simon <conorparlo@gmail.com>, distributed under the [Apache Version 2.0 License](https://www.apache.org/licenses/LICENSE-2.0).  This code is for review only.
+A collection of code samples authored by Conor Parlo Simon <conorparlo@gmail.com>, distributed under the [Apache Version 2.0 License](https://www.apache.org/licenses/LICENSE-2.0).  This code is for review only and is proof-of-concept only, so it is lacking sanitization & security.
 
 ### [node-elasticsearch-api](node-elasticsearch-api)
 
