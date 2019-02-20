@@ -43,7 +43,7 @@ router.get('/', (req, res) => {
     const buildQuery = () => {
         let body = bodybuilder();
 
-        checkParams(queryParams.redactedResults) ? body 
+        checkParams(queryParams.redactedResults) ? body
             : (queryParams.redactedResults.toUpperCase() == 'TRUE') ? body = body.rawOption('_source', {"excludes": ['weeklyWorkoutAggregations', 'totalWorkoutAggregations', 'averageWorkoutAggregations', 'sampleWorkouts']})
             : body
         checkParams(queryParams.category) ? body : body = body.query('match', 'category', queryParams.category);
@@ -66,7 +66,7 @@ router.get('/', (req, res) => {
     checkParams(queryParams.category) ? res.status(400).json({message: "A category is required"})
         : es.search(searchParams).then(plans => {
             const planCount = plans.hits.total;
-            const response = 
+            const response =
                 (planCount == 0 && typeof queryParams.category !== "undefined") ? {status: '400', responseBody: {message: "No plans found. Please check the request syntax."}}
                 : {status: '200', responseBody: plans};
 
@@ -80,6 +80,10 @@ router.post('/', (req, res) => {
 });
 
 router.put('/', (req, res) => {
+    res.status(405).json({message: "Method Not Allowed"});
+});
+
+router.patch('/', (req, res) => {
     res.status(405).json({message: "Method Not Allowed"});
 });
 
