@@ -8,7 +8,7 @@ A PHP OOP example of an asynchronous CRUD model.  The database class is ambiguou
 * The form requires a hidden field defining the request type. ```<input type="hidden" name="formtype" value="read">```
 * The additional fields can be anything matching (BUT MUST MATCH) the targeted tables' schema.  The controller and model will parse the array of key-value pairs and generate the SQL statement.
 * The form submission is sent through an ajax call to the controller, which routes it to the correct function in the model.
-* The model returns a json-encoded response to the view of <success>, <error>, or <data>.
+* The model returns a json-encoded response to the view of success, error, or data.
 
 ### Additional Considerations
 * This example does not sanitize the data at all. This would have to be included if it was ever to be used outside of a testing environment.
